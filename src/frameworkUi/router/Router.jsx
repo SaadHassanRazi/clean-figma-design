@@ -13,6 +13,7 @@ import TwoFactorAuthenticationScreen from "../../interface/pages/TwoFactorAuthen
 import RootLayout from "../../interface/components/RootLayout";
 import HomeScreen from "../../interface/pages/HomeScreen";
 import PayrollScreen from "../../interface/pages/PayrollScreen";
+import WorkSiteScreen from "../../interface/pages/WorkSiteScreen";
 
 const Router = () => {
   const router = createBrowserRouter(
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path="/dashboard" element={<RootLayout />}>
           <Route index element={<HomeScreen />} />
           <Route path="payroll" element={<PayrollScreen />} />
+          <Route path="worksite" element={<WorkSiteScreen />} />
         </Route>
       </>
     )
