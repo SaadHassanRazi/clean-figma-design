@@ -137,7 +137,10 @@ export default function RootLayout() {
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Stack direction={"row"}>
-          <Navbar onClick={open ? handleDrawerClose : handleDrawerOpen} />
+          <Navbar
+            close={handleDrawerClose}
+            onClick={open ? handleDrawerClose : handleDrawerOpen}
+          />
         </Stack>
       </AppBar>
       <Drawer
@@ -161,13 +164,7 @@ export default function RootLayout() {
             alt="clean logo"
             className="w-[105px] h-[22px] "
           />
-          <Button onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </Button>
+         
         </DrawerHeader>
 
         <List>

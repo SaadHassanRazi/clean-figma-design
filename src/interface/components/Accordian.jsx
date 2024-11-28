@@ -29,7 +29,7 @@ export default function AccordionUsage({ FirstAccordian, SecondAccordian }) {
         >
           {FirstAccordian}
         </AccordionSummary>
-        <AccordionDetails sx={{bgcolor:'white',border:'1px solid gray'}}>
+        <AccordionDetails sx={{ bgcolor: "white" }}>
           <AlignItemsList />
         </AccordionDetails>
       </Accordion>

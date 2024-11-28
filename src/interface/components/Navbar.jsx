@@ -8,12 +8,17 @@ import {
   Avatar,
 } from "@mui/material";
 import {
+  ArrowCircleLeft,
+  ArrowLeft,
+  ArrowLeftOutlined,
+  ArrowLeftSharp,
+  KeyboardBackspace,
   Menu,
   NotificationAddRounded,
   SearchRounded,
 } from "@mui/icons-material";
 
-const Navbar = ({ onClick }) => {
+const Navbar = ({ onClick, close }) => {
   return (
     <Stack
       direction="row"
@@ -30,6 +35,9 @@ const Navbar = ({ onClick }) => {
 
       {/* Search Bar */}
       <Stack direction="row" alignItems="center" sx={{ gap: "10px" }}>
+        <Button onClick={close}>
+          <KeyboardBackspace />
+        </Button>
         <InputBase
           placeholder="Search"
           sx={{
@@ -37,6 +45,7 @@ const Navbar = ({ onClick }) => {
             width: "340px",
             height: "45px",
             textAlign: "start",
+
             border: "1px solid #CECECE",
             borderRadius: "10px",
             backgroundColor: "#F7F7F7",
@@ -52,6 +61,7 @@ const Navbar = ({ onClick }) => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  pt: "7px",
                 }}
               >
                 <SearchRounded sx={{ color: "#818080" }} />
