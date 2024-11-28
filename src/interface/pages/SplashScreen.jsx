@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo.png";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 const SplashScreen = () => {
   return (
     <div className="flex flex-col bg-[#06726A] w-screen min-h-screen items-center justify-center">
@@ -13,10 +14,15 @@ const SplashScreen = () => {
       <div className="flex flex-col gap-y-5">
         <Button
           type="button"
-          className="bg-[#FFFFFF] "
+          className="bg-[#FFFFFF] text-black"
           label={"Business Admin"}
         />
-        <Button type="button" className="bg-[#FFFFFF] " label={"Employee"} />
+
+        <Button
+          type="button"
+          className="bg-[#FFFFFF] text-black "
+          label={"Employee"}
+        />
       </div>
     </div>
   );

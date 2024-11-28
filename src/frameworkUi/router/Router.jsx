@@ -12,6 +12,7 @@ import ForgotPasswordScreen from "../../interface/pages/ForgotPasswordScreen";
 import TwoFactorAuthenticationScreen from "../../interface/pages/TwoFactorAuthenticationScreen";
 import RootLayout from "../../interface/components/RootLayout";
 import HomeScreen from "../../interface/pages/HomeScreen";
+import PayrollScreen from "../../interface/pages/PayrollScreen";
 
 const Router = () => {
   const router = createBrowserRouter(
@@ -27,6 +28,7 @@ const Router = () => {
         />
         <Route path="/dashboard" element={<RootLayout />}>
           <Route index element={<HomeScreen />} />
+          <Route path="payroll" element={<PayrollScreen />} />
         </Route>
       </>
     )

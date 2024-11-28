@@ -30,7 +30,7 @@ import {
 import TopDash from "./Navbar";
 import Navbar from "./Navbar";
 import CleanLogo from "../../assets/clean.png";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const drawerWidth = 260;
 
@@ -62,13 +62,15 @@ const menuItem = [
   {
     name: "Home",
     icon: <Home />,
+    text: "/dashboard",
   },
   {
     name: "Payroll",
     icon: <CurrencyBitcoin />,
+    link: "/dashboard/payroll",
   },
   {
-    name: "Sceduler",
+    name: "Scheduler",
     icon: <AccessTime />,
   },
   {
@@ -170,16 +172,26 @@ export default function RootLayout() {
 
         <List>
           {menuItem.map((text, index) => (
-            <ListItem key={text}>
+            <ListItem key={text} component={Link} to={text.link}>
               <ListItemButton>
                 <ListItemIcon
-                  sx={{ color: "white", width: "16px", height: "18px",my:'auto' }}
+                  sx={{
+                    color: "white",
+                    width: "16px",
+                    height: "18px",
+                    my: "auto",
+                  }}
                 >
                   {text.icon}
                 </ListItemIcon>
                 <ListItemText
                   primary={text.name}
-                  sx={{ color: "white", fontSize: "16px", fontWeight: "500",mt:'10px' }}
+                  sx={{
+                    color: "white",
+                    fontSize: "16px",
+                    fontWeight: "500",
+                    mt: "10px",
+                  }}
                 />
               </ListItemButton>
             </ListItem>
