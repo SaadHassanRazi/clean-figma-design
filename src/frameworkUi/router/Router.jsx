@@ -8,6 +8,10 @@ import {
 import SplashScreen from "../../interface/pages/SplashScreen";
 import SignInScreen from "../../interface/pages/SignInScreen";
 import SignUpScreen from "../../interface/pages/SignUpScreen";
+import ForgotPasswordScreen from "../../interface/pages/ForgotPasswordScreen";
+import TwoFactorAuthenticationScreen from "../../interface/pages/TwoFactorAuthenticationScreen";
+import RootLayout from "../../interface/components/RootLayout";
+import HomeScreen from "../../interface/pages/HomeScreen";
 
 const Router = () => {
   const router = createBrowserRouter(
@@ -16,6 +20,14 @@ const Router = () => {
         <Route path="/" element={<SplashScreen />} />
         <Route path="/signin" element={<SignInScreen />} />
         <Route path="/signup" element={<SignUpScreen />} />
+        <Route path="/forgotpassword" element={<ForgotPasswordScreen />} />
+        <Route
+          path="/twofactorauthentication"
+          element={<TwoFactorAuthenticationScreen />}
+        />
+        <Route path="/dashboard" element={<RootLayout />}>
+          <Route index element={<HomeScreen />} />
+        </Route>
       </>
     )
   );
