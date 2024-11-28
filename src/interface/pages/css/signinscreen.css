@@ -1,7 +1,5 @@
 .wrapper {
-  width: 954px;
-  height: 900px;
-
+  width: 100%;
   background: linear-gradient(
       179.98deg,
       #03786e -2.45%,
@@ -11,4 +9,7 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: baseline; /* Center content horizontally */
+  align-items: first baseline; /* Center content vertically */
 }
