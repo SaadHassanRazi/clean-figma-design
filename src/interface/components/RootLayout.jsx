@@ -81,6 +81,7 @@ const menuItem = [
   {
     name: "Messages",
     icon: MessageIcon,
+    link: "/dashboard/worksite",
   },
 ];
 
@@ -118,6 +119,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export default function RootLayout() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
+  const [querySearch, setQuerySearch] = React.useState("");
 
   // Detect screen size using `useMediaQuery`
   const isLgScreen = useMediaQuery(theme.breakpoints.up("lg"));
@@ -144,6 +146,8 @@ export default function RootLayout() {
       <AppBar position="fixed" open={open}>
         <Stack direction={"row"}>
           <Navbar
+            onChange={(e) => setQuerySearch(e.target.value)}
+            value={querySearch}
             close={handleDrawerClose}
             onClick={open ? handleDrawerClose : handleDrawerOpen}
           />
@@ -165,11 +169,13 @@ export default function RootLayout() {
         open={open}
       >
         <DrawerHeader sx={{}}>
-          <img
-            src={CleanLogo}
-            alt="clean logo"
-            className="w-[105px] h-[22px] "
-          />
+          <Link to={"/"}>
+            <img
+              src={CleanLogo}
+              alt="clean logo"
+              className="w-[105px] h-[22px] "
+            />
+          </Link>
         </DrawerHeader>
 
         <List>
@@ -224,7 +230,7 @@ export default function RootLayout() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Outlet />
+        <Outlet context={{ querySearch }} />
       </Main>
     </Box>
   );

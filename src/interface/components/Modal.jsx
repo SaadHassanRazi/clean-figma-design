@@ -18,7 +18,13 @@ const style = {
   borderRadius: "10px",
 };
 
-const ReusableModal = ({ isOpen, onClose }) => {
+const ReusableModal = ({ isOpen, onClose, formData }) => {
+  const [name, setName] = React.useState("");
+  const [location, setLocation] = React.useState("");
+  const submitHandler = (e) => {
+    e.preventDefault();
+    formData({ name, location });
+  };
   return (
     <Modal
       open={isOpen}
@@ -26,47 +32,59 @@ const ReusableModal = ({ isOpen, onClose }) => {
       aria-labelledby="modal-title"
       aria-describedby="modal-description"
     >
-      <Box sx={style}>
-        <Cancel
-          sx={{
-            float: "inline-end",
-            position: "relative",
-            top: "-20px",
-            left: "10px",
-          }}
-        />
-        <Typography id="modal-title" variant="h6" component="h2" sx={{ mb: 2 }}>
-          Filter Employee
-        </Typography>
-        <div className="flex flex-col justify-around gap-y-3">
-          <IndexField
-            sx={
-              "w-[340px] h-[50px] text-[14px] text-start ps-4 rounded-[10px] border-[#CECECE] bg-[#F9F9F9]"
-            }
-            placeholder="Enter employee name"
-            type="text"
+      <form onSubmit={submitHandler}>
+        <Box sx={style}>
+          <Cancel
+            sx={{
+              float: "inline-end",
+              position: "relative",
+              top: "-20px",
+              left: "10px",
+            }}
           />
-          <IndexField
-            sx={
-              "w-[340px] h-[50px] text-[14px] text-start ps-4 rounded-[10px] border-[#CECECE] bg-[#F9F9F9]"
-            }
-            placeholder="Current location"
-            type="text"
-          />
-          <IndexField
-            sx={
-              "w-[340px] h-[50px] text-[14px] text-start ps-4 rounded-[10px] border-[#CECECE] bg-[#F9F9F9]"
-            }
-            placeholder="Availability"
-            type="text"
-          />
-          <Button
-            label={"Apply Filter"}
-            className={"bg-[#06726A] text-white"}
-          />
-          <Button label={"Cancel"} className={"text-[#06726A]"} />
-        </div>
-      </Box>
+          <Typography
+            id="modal-title"
+            variant="h6"
+            component="h2"
+            sx={{ mb: 2 }}
+          >
+            Filter Employee
+          </Typography>
+          <div className="flex flex-col justify-around gap-y-3">
+            <IndexField
+              sx={
+                "w-[340px] h-[50px] text-[14px] text-start ps-4 rounded-[10px] border-[#CECECE] bg-[#F9F9F9]"
+              }
+              placeholder="Enter employee name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <IndexField
+              sx={
+                "w-[340px] h-[50px] text-[14px] text-start ps-4 rounded-[10px] border-[#CECECE] bg-[#F9F9F9]"
+              }
+              placeholder="Current location"
+              type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+            <IndexField
+              sx={
+                "w-[340px] h-[50px] text-[14px] text-start ps-4 rounded-[10px] border-[#CECECE] bg-[#F9F9F9]"
+              }
+              placeholder="Availability"
+              type="text"
+            />
+            <Button
+              label={"Apply Filter"}
+              type={"submit"}
+              className={"bg-[#06726A] text-white"}
+            />
+            <Button label={"Cancel"} className={"text-[#06726A]"} />
+          </div>
+        </Box>
+      </form>
     </Modal>
   );
 };

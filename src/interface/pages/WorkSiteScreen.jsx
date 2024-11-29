@@ -3,80 +3,72 @@ import { Box, Button, Divider, Grid, Switch, Typography } from "@mui/material";
 import React, { useState } from "react";
 import BasicCard from "../components/Card";
 import ReportList from "../components/ReportList";
+import { useOutletContext } from "react-router-dom";
 
 const WorkSiteScreen = () => {
+  const { querySearch } = useOutletContext();
+
   const payList = [
     {
       name: "WorkSite Number 1",
       location: "Worksite Location",
-     
     },
     {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
-      {
-        name: "WorkSite Number 1",
-        location: "Worksite Location",
-       
-      },
+      name: "WorkSite Number 2",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 3",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 4",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 5",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 6",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 7",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 8",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 9",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 10",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 11",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 12",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 13",
+      location: "Worksite Location",
+    },
+    {
+      name: "WorkSite Number 14",
+      location: "Worksite Location",
+    },
   ];
+  const filteredData = payList.filter((item, index) =>
+    item.name.toLowerCase().includes(querySearch.toLowerCase())
+  );
   return (
     <Box sx={{ padding: "20px" }}>
       <Box className="flex flex-row justify-between">
@@ -105,22 +97,41 @@ const WorkSiteScreen = () => {
       </Box>
       <Divider sx={{ my: 2 }} />
 
-      {/* Grid for two-column layout */}
-      <Grid container spacing={2}>
-        {/* First Column */}
-        <Grid item xs={12} sm={6}>
-          {payList.slice(0, 7).map((item, index) => (
-            <ReportList key={index} name={item.name} location={item.location} />
-          ))}
-        </Grid>
+      {filteredData && querySearch ? (
+        filteredData.map((item, index) => {
+          return (
+            <Grid>
+              <ReportList
+                key={index}
+                name={item.name}
+                location={item.location}
+              />
+            </Grid>
+          );
+        })
+      ) : (
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            {payList.slice(0, 7).map((item, index) => (
+              <ReportList
+                key={index}
+                name={item.name}
+                location={item.location}
+              />
+            ))}
+          </Grid>
 
-        {/* Second Column */}
-        <Grid item xs={12} sm={6}>
-          {payList.slice(7).map((item, index) => (
-            <ReportList key={index} name={item.name} location={item.location} />
-          ))}
+          <Grid item xs={12} sm={6}>
+            {payList.slice(7).map((item, index) => (
+              <ReportList
+                key={index}
+                name={item.name}
+                location={item.location}
+              />
+            ))}
+          </Grid>
         </Grid>
-      </Grid>
+      )}
     </Box>
   );
 };

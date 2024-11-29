@@ -20,8 +20,9 @@ import {
 } from "@mui/icons-material";
 import ProfilePic from "../../assets/profilepic.png";
 import Notification from "../../assets/notification.png";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ onClick, close }) => {
+const Navbar = ({ onClick, close, value, onChange }) => {
   return (
     <Stack
       direction="row"
@@ -43,6 +44,8 @@ const Navbar = ({ onClick, close }) => {
         </Button>
         <InputBase
           placeholder="Search"
+          value={value}
+          onChange={onChange}
           sx={{
             display: { lg: "flex", xs: "none" },
             width: "340px",
@@ -81,6 +84,8 @@ const Navbar = ({ onClick, close }) => {
         </Button>
         <Avatar
           variant="square"
+          component={Link}
+          to={"/dashboard/profile"}
           src={ProfilePic}
           sx={{ width: "42px", height: "42px", borderRadius: "10px" }}
         />

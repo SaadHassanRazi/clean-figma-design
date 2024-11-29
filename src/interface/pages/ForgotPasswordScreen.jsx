@@ -2,6 +2,7 @@ import React from "react";
 import IndexField from "../components/IndexField";
 import AuthLayout from "../components/AuthLayout";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const ForgotPasswordScreen = () => {
   return (
@@ -15,7 +16,10 @@ const ForgotPasswordScreen = () => {
         placeholder="Enter your email"
       />
       <div className="flex flex-col mx-auto">
-        <Button label={"Submit"} className={"bg-[#06726A] text-white"} />
+        <Link to={"/signup"}>
+          <Button label={"Submit"} className={"bg-[#06726A] text-white"} />
+        </Link>
+      
         <Button label={"Resend Token"} className={"text-[#06726A]"} />
       </div>
     </AuthLayout>

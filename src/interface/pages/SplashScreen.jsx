@@ -12,17 +12,20 @@ const SplashScreen = () => {
         <p className="text-[24px] font-[500] text-white">I am a</p>
       </div>
       <div className="flex flex-col gap-y-5">
-        <Button
-          type="button"
-          className="bg-[#FFFFFF] text-black"
-          label={"Business Admin"}
-        />
-
-        <Button
-          type="button"
-          className="bg-[#FFFFFF] text-black "
-          label={"Employee"}
-        />
+        <Link to={"/signin"}>
+          <Button
+            type="button"
+            className="bg-[#FFFFFF] text-black"
+            label={"Business Admin"}
+          />
+        </Link>
+        <Link to={"/signin"}>
+          <Button
+            type="button"
+            className="bg-[#FFFFFF] text-black "
+            label={"Employee"}
+          />
+        </Link>
       </div>
     </div>
   );

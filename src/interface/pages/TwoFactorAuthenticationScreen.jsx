@@ -3,6 +3,7 @@ import IndexField from "../components/IndexField";
 import AuthLayout from "../components/AuthLayout";
 import Button from "../components/Button";
 import TokenField from "../components/TokenField";
+import { Link } from "react-router-dom";
 
 const TwoFactorAuthenticationScreen = () => {
   return (
@@ -13,7 +14,9 @@ const TwoFactorAuthenticationScreen = () => {
     >
       <TokenField />
       <div className="flex flex-col mx-auto">
-        <Button label={"Submit"} className={"bg-[#06726A] text-white"} />
+        <Link to={"/dashboard"}>
+          <Button label={"Submit"} className={"bg-[#06726A] text-white"} />
+        </Link>
         <Button label={"Resend Token"} className={"text-[#06726A]"} />
       </div>
     </AuthLayout>
