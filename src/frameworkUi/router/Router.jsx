@@ -15,6 +15,7 @@ import HomeScreen from "../../interface/pages/HomeScreen";
 import PayrollScreen from "../../interface/pages/PayrollScreen";
 import WorkSiteScreen from "../../interface/pages/WorkSiteScreen";
 import ProfileScreen from "../../interface/pages/ProfileScreen";
+import SchedularScreen from "../../interface/pages/SchedularScreen";
 
 const Router = () => {
   const router = createBrowserRouter(
@@ -33,6 +34,7 @@ const Router = () => {
           <Route path="payroll" element={<PayrollScreen />} />
           <Route path="worksite" element={<WorkSiteScreen />} />
           <Route path="profile" element={<ProfileScreen />} />
+          <Route path="schedular" element={<SchedularScreen />} />
         </Route>
       </>
     )

@@ -13,7 +13,7 @@ const TwoFactorAuthenticationScreen = () => {
     >
       <TokenField />
       <div className="flex flex-col mx-auto">
-        <Button label={"Submit"} className={"bg-[#06726A]"} />
+        <Button label={"Submit"} className={"bg-[#06726A] text-white"} />
         <Button label={"Resend Token"} className={"text-[#06726A]"} />
       </div>
     </AuthLayout>

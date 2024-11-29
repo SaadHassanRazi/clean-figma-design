@@ -27,8 +27,14 @@ const ReusableModal = ({ isOpen, onClose }) => {
       aria-describedby="modal-description"
     >
       <Box sx={style}>
-        
-        <Cancel sx={{float:'inline-end',position:'relative',top:'-20px',left:'10px'}} />
+        <Cancel
+          sx={{
+            float: "inline-end",
+            position: "relative",
+            top: "-20px",
+            left: "10px",
+          }}
+        />
         <Typography id="modal-title" variant="h6" component="h2" sx={{ mb: 2 }}>
           Filter Employee
         </Typography>
@@ -54,8 +60,11 @@ const ReusableModal = ({ isOpen, onClose }) => {
             placeholder="Availability"
             type="text"
           />
-          <Button label={"Apply Filter"} className={"bg-[#06726A]"} />
-          <Button label={"Cancel"} className={"text-green-800"} />
+          <Button
+            label={"Apply Filter"}
+            className={"bg-[#06726A] text-white"}
+          />
+          <Button label={"Cancel"} className={"text-[#06726A]"} />
         </div>
       </Box>
     </Modal>

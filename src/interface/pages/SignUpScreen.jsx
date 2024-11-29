@@ -26,7 +26,7 @@ const SignUpScreen = () => {
         </Typography>
       </div>
       <div className="flex flex-col">
-        <Button className="bg-[#06726A]" label="Sign Up" />
+        <Button className="bg-[#06726A] text-white" label="Sign Up" />
         <Button className="text-[#06726A]" label="Back" />
       </div>
     </AuthLayout>

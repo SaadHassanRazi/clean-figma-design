@@ -22,6 +22,8 @@ export default function AccordionUsage({ FirstAccordian, SecondAccordian }) {
           sx={{
             height: "79px",
             borderRadius: "10px",
+            fontWeight: "500",
+            fontSize: "22px",
           }}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
@@ -43,6 +45,8 @@ export default function AccordionUsage({ FirstAccordian, SecondAccordian }) {
         <AccordionSummary
           sx={{
             height: "79px",
+            fontWeight: "500",
+            fontSize: "22px",
           }}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2-content"

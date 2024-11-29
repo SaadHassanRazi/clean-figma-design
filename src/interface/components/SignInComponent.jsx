@@ -10,7 +10,7 @@ const SignInComponent = () => {
         variant={"outlined"}
         label={"Email Address"}
         sx={
-          "w-[340px] h-[50px] rounded-[10px] border border-[#CECECE] bg-[#F7F7F7] placeholder-[#818080] text-[14px] font-[400] ps-5 focus:outline-none"
+          "w-[340px] h-[50px] rounded-[10px] text-start border border-[#CECECE] bg-[#F7F7F7] placeholder-[#818080] text-[14px] font-[400] ps-5 focus:outline-none"
         }
         placeholder={"Email Address"}
         name={"email"}
@@ -19,7 +19,7 @@ const SignInComponent = () => {
 
       <PasswordInput
         className={
-          "w-[340px] h-[50px] rounded-[10px] border border-[#CECECE] bg-[#F7F7F7] placeholder-[#818080] text-[14px] font-[400] ps-5 focus:outline-none"
+          "w-[340px] h-[50px] rounded-[10px] text-start border border-[#CECECE] bg-[#F7F7F7] placeholder-[#818080] text-[14px] font-[400] ps-5 focus:outline-none"
         }
         placeholder={"Password"}
       />

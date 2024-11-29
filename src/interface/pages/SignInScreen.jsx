@@ -25,7 +25,7 @@ const SignInScreen = () => {
         >
           Forgot Password?
         </Typography>
-        <Button className="bg-[#06726A] mt-20" label="Login" />
+        <Button className="bg-[#06726A] mt-20 text-white" label="Login" />
       </Box>
     </AuthLayout>
   );

@@ -11,11 +11,11 @@ const ForgotPasswordScreen = () => {
       className={"h-[384px] w-[352px] gap-y-12"}
     >
       <IndexField
-        sx="w-[340px] h-[50px] rounded-[10px] border border-[#CECECE] bg-[#F7F7F7] placeholder-[#818080] text-[14px] font-[400] ps-5 focus:outline-none"
+        sx="w-[340px] h-[50px] text-start rounded-[10px] border border-[#CECECE] bg-[#F7F7F7] placeholder-[#818080] text-[14px] font-[400] ps-5 focus:outline-none"
         placeholder="Enter your email"
       />
       <div className="flex flex-col mx-auto">
-        <Button label={"Submit"} className={"bg-[#06726A]"} />
+        <Button label={"Submit"} className={"bg-[#06726A] text-white"} />
         <Button label={"Resend Token"} className={"text-[#06726A]"} />
       </div>
     </AuthLayout>

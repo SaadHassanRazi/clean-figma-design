@@ -127,21 +127,19 @@ const PayrollScreen = () => {
             <FilterAlt />
             Filter
           </Button>
-          <Box className="flex flex-row ">
+          <Box className="flex flex-row justify-end items-end translate-y-7">
             <Typography
               sx={{ fontWeight: "400", fontSize: "14px", my: "auto" }}
             >
               Display earnings
             </Typography>
-            <Switch className="my-auto " color="success" />
+            <Switch className="my-auto" color="success" defaultChecked/>
           </Box>
         </Box>
       </Box>
       <Divider sx={{ my: 2 }} />
 
-      {/* Grid for two-column layout */}
       <Grid container spacing={2}>
-        {/* First Column */}
         <Grid item xs={12} sm={6}>
           <Box
             sx={{
@@ -186,7 +184,6 @@ const PayrollScreen = () => {
           ))}
         </Grid>
 
-        {/* Second Column */}
         <Grid item xs={12} sm={6}>
           <Box
             sx={{

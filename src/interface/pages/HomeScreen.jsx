@@ -3,7 +3,8 @@ import { CalendarMonthRounded } from "@mui/icons-material";
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import Button from "../components/Button";
 import AccordionUsage from "../components/Accordian";
-
+import CalendarIcon from "../../assets/calendar.png";
+import { Calendar } from "react-big-calendar";
 const HomeScreen = () => {
   const cardStyles = {
     width: "100%",
@@ -39,20 +40,19 @@ const HomeScreen = () => {
         <Grid item xs={12} lg>
           <Box sx={cardStyles}>
             <Box display="flex" alignItems="center" gap={2}>
-              <CalendarMonthRounded
-                sx={{ color: "#06726A", width: 30, height: 34 }}
-              />
-              <Typography sx={headingStyles}>Upcoming Shift</Typography>
-            </Box>
-            <Box>
-              <Typography sx={{ ...headingStyles, fontSize: 14 }}>
-                Worksite number 1
-              </Typography>
-              <Typography sx={subTextStyles}>Location</Typography>
+              <img src={CalendarIcon} className="-translate-y-5" alt="calendar" />
+              <Box>
+                <Typography sx={headingStyles}>Upcoming Shift</Typography>
+
+                <Typography sx={{ ...headingStyles, fontSize: 14 }}>
+                  Worksite number 1
+                </Typography>
+                <Typography sx={subTextStyles}>Location</Typography>
+              </Box>
             </Box>
             <Button
               label="Clock in"
-              className="text-[16px] h-[42px] font-[500] bg-[#06726A]"
+              className="text-[16px] h-[42px] font-[500] text-[white] bg-[#06726A]"
             />
           </Box>
         </Grid>

@@ -15,8 +15,11 @@ import {
   KeyboardBackspace,
   Menu,
   NotificationAddRounded,
+  NotificationsOutlined,
   SearchRounded,
 } from "@mui/icons-material";
+import ProfilePic from "../../assets/profilepic.png";
+import Notification from "../../assets/notification.png";
 
 const Navbar = ({ onClick, close }) => {
   return (
@@ -74,10 +77,11 @@ const Navbar = ({ onClick, close }) => {
       {/* User Profile or Navigation */}
       <Stack direction="row" spacing={2} alignItems="center">
         <Button variant="text" sx={{ color: "#333", textTransform: "none" }}>
-          <NotificationAddRounded />
+          <img src={Notification} className="w-[24px] h-[30px]" alt="" />
         </Button>
         <Avatar
           variant="square"
+          src={ProfilePic}
           sx={{ width: "42px", height: "42px", borderRadius: "10px" }}
         />
         <Typography

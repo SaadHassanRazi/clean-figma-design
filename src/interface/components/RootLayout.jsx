@@ -30,7 +30,11 @@ import {
 import TopDash from "./Navbar";
 import Navbar from "./Navbar";
 import CleanLogo from "../../assets/clean.png";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import HomeIcon from "../../assets/home.png";
+import MessageIcon from "../../assets/message.png";
+import PayrollIcon from "../../assets/payroll.png";
+import ClockIcon from "../../assets/clock.png";
 
 const drawerWidth = 260;
 
@@ -61,21 +65,22 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
 const menuItem = [
   {
     name: "Home",
-    icon: <Home />,
-    text: "/dashboard",
+    icon: HomeIcon,
+    link: "/dashboard",
   },
   {
     name: "Payroll",
-    icon: <CurrencyBitcoin />,
+    icon: PayrollIcon,
     link: "/dashboard/payroll",
   },
   {
     name: "Scheduler",
-    icon: <AccessTime />,
+    icon: ClockIcon,
+    link: "/dashboard/schedular",
   },
   {
     name: "Messages",
-    icon: <Email />,
+    icon: MessageIcon,
   },
 ];
 
@@ -131,6 +136,7 @@ export default function RootLayout() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const location = useLocation();
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -164,35 +170,43 @@ export default function RootLayout() {
             alt="clean logo"
             className="w-[105px] h-[22px] "
           />
-         
         </DrawerHeader>
 
         <List>
-          {menuItem.map((text, index) => (
-            <ListItem key={text} component={Link} to={text.link}>
-              <ListItemButton>
-                <ListItemIcon
-                  sx={{
-                    color: "white",
-                    width: "16px",
-                    height: "18px",
-                    my: "auto",
-                  }}
-                >
-                  {text.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={text.name}
-                  sx={{
-                    color: "white",
-                    fontSize: "16px",
-                    fontWeight: "500",
-                    mt: "10px",
-                  }}
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          {menuItem.map((item) => {
+            const isActive = location.pathname === item.link;
+            return (
+              <ListItem key={item.name} component={Link} to={item.link}>
+                <ListItemButton>
+                  <ListItemIcon
+                    sx={{
+                      color: isActive ? "white" : "grey",
+                      width: "16px",
+                      height: "18px",
+                      my: "auto",
+                    }}
+                  >
+                    <img
+                      src={item.icon}
+                      style={{
+                        color: isActive ? "white" : "grey",
+                      }}
+                      alt={item.name}
+                    />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.name}
+                    sx={{
+                      color: isActive ? "white" : "grey",
+                      fontSize: "16px",
+                      fontWeight: isActive ? "bold" : "500",
+                      mt: "12px",
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
         {/* <Divider />
         <List>
