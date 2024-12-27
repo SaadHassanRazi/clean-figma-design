@@ -1,0 +1,50 @@
+/* .rbc-button-link {
+  text-align: center;
+
+  width: 57px;
+  height: 71px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0 5px 0 black;
+  font-weight: 400;
+  border-radius: 10px;
+  transform: translateY(5px);
+}
+
+.rbc-header {
+  width: 57px;
+  height: 80px;
+  border: none;
+}
+.rbc-today {
+  background-color: transparent;
+}
+
+.rbc-today > button {
+  background: #06726a;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  transform: translateY(5px);
+}
+
+.rbc-time-header-content {
+  border: none;
+}
+
+.rbc-time-view {
+  border: none;
+}
+
+.rbc-header + .rbc-header {
+  border: "none";
+}
+.rbc-time-header-cell {
+  border: none;
+}
+
+.rbc-time-header .rbc-overflowing {
+  border: none;
+} */

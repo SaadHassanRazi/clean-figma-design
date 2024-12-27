@@ -203,7 +203,7 @@ const PayrollScreen = () => {
                 name={item.name}
                 location={item.location}
                 image={item.image}
-                hours={displayEarnings ? item.hours : ""}
+                hours={item.hours}
                 pay={displayEarnings ? item.pay : ""}
               />
             </Grid>
@@ -249,7 +249,7 @@ const PayrollScreen = () => {
                 name={item.name}
                 location={item.location}
                 image={item.image}
-                hours={displayEarnings ? item.hours : ""}
+                hours={item.hours}
                 pay={displayEarnings ? item.pay : ""}
               />
             </Grid>
@@ -295,7 +295,7 @@ const PayrollScreen = () => {
                 name={item.name}
                 location={item.location}
                 image={item.image}
-                hours={displayEarnings ? item.hours : ""}
+                hours={item.hours}
                 pay={displayEarnings ? item.pay : ""}
               />
             ))}
@@ -339,7 +339,7 @@ const PayrollScreen = () => {
                 name={item.name}
                 location={item.location}
                 image={item.image}
-                hours={displayEarnings ? item.hours : ""}
+                hours={ item.hours }
                 pay={displayEarnings ? item.pay : ""}
               />
             ))}
